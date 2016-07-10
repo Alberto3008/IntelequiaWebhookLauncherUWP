@@ -14,6 +14,9 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using Microsoft.EntityFrameworkCore;
+using IntelequiaWebhookLauncher.Model;
+using Windows.UI.ViewManagement;
 
 namespace IntelequiaWebhookLauncher
 {
@@ -30,6 +33,14 @@ namespace IntelequiaWebhookLauncher
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+
+            ApplicationView.PreferredLaunchViewSize = new Size(480, 800);
+            ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.PreferredLaunchViewSize;
+
+            using (var db = new WebhookContext())
+            {
+                db.Database.Migrate();
+            }
         }
 
         /// <summary>
