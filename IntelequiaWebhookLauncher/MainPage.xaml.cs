@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI;
+using Windows.UI.Core;
 using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -26,11 +27,16 @@ namespace IntelequiaWebhookLauncher
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        
+        Frame rootFrame = Window.Current.Content as Frame;
         public MainPage()
         {
             this.InitializeComponent();
-           
+
+        
+                // Remove the UI from the title bar if in-app back stack is empty.
+                SystemNavigationManager.GetForCurrentView().AppViewBackButtonVisibility =
+                    AppViewBackButtonVisibility.Collapsed;
+            
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
@@ -95,6 +101,8 @@ namespace IntelequiaWebhookLauncher
                 webPanel.Background = null;
             }
         }
+
+        
 
         private void Edit(object sender, RoutedEventArgs e)
         {

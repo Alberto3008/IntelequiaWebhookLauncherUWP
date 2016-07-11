@@ -18,42 +18,55 @@
                     <AppBarButton Icon="Add" Label="New" Click="NewWebhook_Click" Foreground="White" />
                 </controls:PageHeader.PrimaryCommands>
             </controls:PageHeader>
-            <ListView x:Name="Webhooks" Margin="0" VerticalAlignment="Top" Height="593">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ListViewItem Padding="0">
-                            <Grid BorderBrush="#FF6A00FF" Width="430">
-                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
-                                    <TextBlock x:Name="nameText" Text="{Binding Name}" Margin="5,0" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                    <TextBlock x:Name="urlText" Text="{Binding Name}" Margin="5,0"  FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                                </StackPanel>
 
-                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
-                                    <AppBarButton Icon="Edit" Click="Edit" Height="40"/>
-                                    <AppBarButton Icon="Play" Click="Launch" Height="40"/>
-                                </StackPanel>
-                            </Grid>
-                        </ListViewItem>
-                    </DataTemplate>
-                   
-                   
-                </ListView.ItemTemplate>
-                <ListViewItem Padding="0">
-                    <Grid BorderBrush="#FF6A00FF" Width="430" >
+            <ScrollViewer>
+                <ListView x:Name="Webhooks" Margin="0" VerticalAlignment="Top" Padding="0">
+                    <ListView.ItemTemplate>
+
+                        <DataTemplate>
+                            <ListViewItem Padding="0" HorizontalContentAlignment="Stretch">
+                                <Grid>
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                                        <TextBlock x:Name="nameText" Text="{Binding Name}" Margin="5,0" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        <TextBlock x:Name="urlText" Text="{Binding Url}" Margin="5,0"  FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    </StackPanel>
+
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                                        <AppBarButton Icon="Edit" Click="Edit" Height="40"/>
+                                        <AppBarButton Icon="Play" Click="Launch" Height="40"/>
+                                    </StackPanel>
+                                </Grid>
+                            </ListViewItem>
+
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+
+                    <ListViewItem Padding="0">
+                        <Grid>
+
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                                <TextBlock x:Name="nameText" Text="aasda" Margin="5,0" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                <TextBlock x:Name="urlText" Text="wwww" Margin="5,0"  FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
+                                <AppBarButton Icon="Edit" Click="Edit" Height="40" Padding="0" Margin="0" />
+                                <AppBarButton Icon="Play" Click="Launch" Height="40"/>
+                            </StackPanel>
+
+                        </Grid>
                         
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
-                            <TextBlock x:Name="nameText" Text="aasda" Margin="5,0" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                            <TextBlock x:Name="urlText" Text="wwww" Margin="5,0"  FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-                        </StackPanel>
-
-                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
-                            <AppBarButton Icon="Edit" Click="Edit" Height="40"/>
-                            <AppBarButton Icon="Play" Click="Launch" Height="40"/>
-                        </StackPanel>
-                       
-                    </Grid>
-                </ListViewItem>
-            </ListView>
+                    </ListViewItem>
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                            <Setter Property="Padding" Value="0" />
+                            <Setter Property="BorderBrush" Value="#FF6A00FF"/>
+                            <Setter Property="BorderThickness" Value="1,1,1,1"/>
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                </ListView>
+            </ScrollViewer>
         </StackPanel>
     </Grid>
 </Page>

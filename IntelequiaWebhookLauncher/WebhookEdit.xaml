@@ -26,7 +26,7 @@
 
             <TextBox x:Name="urlText" Header="Url" PlaceholderText="Type your webhook's uri" Margin="20,20,20,0"/>
 
-            <CalendarDatePicker  x:Name="expireCalendarDatePicker" Header="Expire date" PlaceholderText="Selecxt your expire date" Margin="20,20,20,0"/>
+            <CalendarDatePicker  x:Name="expireCalendarDatePicker" Header="Expire date" PlaceholderText="Select your expire date" Margin="20,20,20,0"/>
 <Image Source="Assets/SplashScreen.png" />
 
         </StackPanel>

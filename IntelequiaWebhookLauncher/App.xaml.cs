@@ -36,6 +36,7 @@ namespace IntelequiaWebhookLauncher
 
             ApplicationView.PreferredLaunchViewSize = new Size(480, 800);
             ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.PreferredLaunchViewSize;
+            
 
             using (var db = new WebhookContext())
             {
@@ -43,6 +44,8 @@ namespace IntelequiaWebhookLauncher
             }
         }
 
+
+    
         /// <summary>
         /// Se invoca cuando el usuario final inicia la aplicación normalmente. Se usarán otros puntos
         /// de entrada cuando la aplicación se inicie para abrir un archivo específico, por ejemplo.
